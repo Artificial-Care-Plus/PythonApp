@@ -1,3 +1,7 @@
+drop TABLE  t_ac_usuario CASCADE CONSTRAINTS;
+drop TABLE t_ac_acoes CASCADE CONSTRAINTS;
+drop TABLE  t_ac_dicas CASCADE CONSTRAINTS;
+
 CREATE TABLE t_ac_acoes (
     id_acoes                NUMBER(10) generated always as identity NOT NULL,
     score                   NUMBER(4) NOT NULL,
