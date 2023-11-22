@@ -6,6 +6,11 @@ import pandas as pd
 lista_nome_dados = ["id", "nome", "email", "senha", "nascimento", "peso", "altura"]
 lista_nome_dados_dicas = ["id", "categoria", "texto"]
 
+def criarJson(data):
+    nome_arquivo = input('Digite o nome do arquivo: ')
+    with open(f"{nome_arquivo}.json", 'w') as arquivo:
+        json.dump(data, arquivo)
+
 def main():
     print('Bem vindo ao nosso sistema de gerenciamento!')
     while True:
@@ -67,11 +72,7 @@ def listarClientes():
     print('\nDeseja salvar os dados em um arquivo?')
     if (validation.validarSimNao()):
         # Criar arquivo json com os dados        
-        # Nome do arquivo
-        nome_arquivo = input('Digite o nome do arquivo: ')
-        # Criando e salvando o arquivo
-        with open(f"{nome_arquivo}.json", 'w') as arquivo:
-            json.dump(lista_dados, arquivo)
+        criarJson(lista_dados)
         print('Arquivo salvo com sucesso!\n')
     else:
         print('Ok!\n')
@@ -93,11 +94,7 @@ def listarClientesPorEmail():
     print('\nDeseja salvar os dados em um arquivo?')
     if (validation.validarSimNao()):
         # Criar arquivo json com os dados        
-        # Nome do arquivo
-        nome_arquivo = input('Digite o nome do arquivo: ')
-        # Criando e salvando o arquivo
-        with open(f"{nome_arquivo}.json", 'w') as arquivo:
-            json.dump(dados, arquivo)
+        criarJson(dados)
         print('Arquivo salvo com sucesso!\n')
     else:
         print('Ok!\n')
@@ -205,10 +202,7 @@ def listarDicas():
     if (validation.validarSimNao()):
         # Criar arquivo json com os dados        
         # Nome do arquivo
-        nome_arquivo = input('Digite o nome do arquivo: ')
-        # Criando e salvando o arquivo
-        with open(f"{nome_arquivo}.json", 'w') as arquivo:
-            json.dump(lista_dados, arquivo)
+        criarJson(lista_dados)
         print('Arquivo salvo com sucesso!\n')
     else:
         print('Ok!\n')
@@ -230,11 +224,7 @@ def listarDicaPorId():
     print('\nDeseja salvar os dados em um arquivo?')
     if(validation.validarSimNao()):
         # Criar arquivo json com os dados        
-        # Nome do arquivo
-        nome_arquivo = input('Digite o nome do arquivo: ')
-        # Criando e salvando o arquivo
-        with open(f"{nome_arquivo}.json", 'w') as arquivo:
-            json.dump(dados, arquivo)
+        criarJson(dados)
         print('Arquivo salvo com sucesso!\n')
     else:
         print('Ok!\n')
